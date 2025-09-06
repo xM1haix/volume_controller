@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:volume_controller/pages/controller.dart';
-
-import '../functions/nav.dart';
-import 'server.dart';
+import "package:flutter/material.dart";
+import "package:volume_controller/functions/nav.dart";
+import "package:volume_controller/pages/controller.dart";
+import "package:volume_controller/pages/server.dart";
 
 class BasePage extends StatelessWidget {
   const BasePage({super.key});
@@ -13,17 +12,16 @@ class BasePage extends StatelessWidget {
       appBar: AppBar(),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             IconButton(
-              onPressed: () => nav(context, ServerPage()),
-              icon: Icon(
+              onPressed: () => nav(context, const ServerPage()),
+              icon: const Icon(
                 Icons.monitor,
               ),
             ),
             IconButton(
-              onPressed: () => nav(context, ControllerPage()),
-              icon: Icon(
+              onPressed: () => nav(context, const ControllerPage()),
+              icon: const Icon(
                 Icons.phone,
               ),
             ),

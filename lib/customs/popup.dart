@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
-
-import '/functions/nav.dart';
+import "package:flutter/material.dart";
+import "package:volume_controller/functions/nav.dart";
 
 Future<bool?> confirmPopUp({
   required BuildContext context,
@@ -20,7 +19,7 @@ Future<bool?> confirmPopUp({
 Future<void> errorPopup(BuildContext context, e) async {
   await popup(
     context: context,
-    title: const Text('Something went wrong!'),
+    title: const Text("Something went wrong!"),
     content: Text(e.toString()),
     actions: [("Ok!", null)],
   );
@@ -38,6 +37,16 @@ Future infoPopUp({
       actions: [("Ok!", null)],
     );
 
+void loading(BuildContext context) => popup(
+      dismissible: false,
+      context: context,
+      actions: [],
+      content: const SizedBox(
+        height: 50,
+        width: 50,
+        child: Center(child: CircularProgressIndicator()),
+      ),
+    );
 Future<T?> popup<T>({
   required BuildContext context,
   required List<(String text, T value)> actions,
@@ -48,7 +57,7 @@ Future<T?> popup<T>({
     showDialog(
       barrierDismissible: dismissible,
       context: context,
-      builder: (BuildContext context) => AlertDialog(
+      builder: (context) => AlertDialog(
         actionsAlignment: actions.length == 1
             ? MainAxisAlignment.center
             : MainAxisAlignment.spaceEvenly,
@@ -62,15 +71,5 @@ Future<T?> popup<T>({
               ),
             )
             .toList(),
-      ),
-    );
-void loading(BuildContext context) => popup(
-      dismissible: false,
-      context: context,
-      actions: [],
-      content: const SizedBox(
-        height: 50,
-        width: 50,
-        child: Center(child: CircularProgressIndicator()),
       ),
     );

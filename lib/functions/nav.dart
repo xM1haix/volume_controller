@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
-back(context, [x]) => Navigator.pop(context, x);
-nav(context, Widget location) => Navigator.push(
+void back(BuildContext context, [x]) => Navigator.pop(context, x);
+Future<void> nav(BuildContext context, Widget location) => Navigator.push(
       context,
       PageRouteBuilder(
         pageBuilder: (context, animation, secondaryAnimation) => location,

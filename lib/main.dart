@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:volume_controller/pages/base.dart';
+import "package:flutter/material.dart";
+import "package:volume_controller/pages/base.dart";
 
 void main() => runApp(const MyApp());
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Colors.black,
       ),
-      home: BasePage(),
+      home: const BasePage(),
     );
   }
 }
