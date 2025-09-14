@@ -6,7 +6,9 @@ import "package:volume_controller/functions/server.dart";
 
 const _green = Color(0xFF00FF00);
 
+///The page of the Server
 class ServerPage extends StatefulWidget {
+  ///
   const ServerPage({super.key});
 
   @override

@@ -7,9 +7,12 @@ import "package:flutter/material.dart";
 import "package:volume_controller/customs/popup.dart";
 import "package:volume_controller/functions/nav.dart";
 
+///
 String sendVolume(Map x) => json.encode({"VOLUME": x});
 
+///The page of the Controller
 class ControllerPage extends StatefulWidget {
+  ///
   const ControllerPage({super.key});
 
   @override

@@ -3,7 +3,9 @@ import "package:volume_controller/pages/base.dart";
 
 void main() => runApp(const MyApp());
 
+///Main skelethon of the app
 class MyApp extends StatelessWidget {
+  ///
   const MyApp({super.key});
 
   @override

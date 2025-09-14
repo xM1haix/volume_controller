@@ -3,7 +3,9 @@ import "package:volume_controller/functions/nav.dart";
 import "package:volume_controller/pages/controller.dart";
 import "package:volume_controller/pages/server.dart";
 
+///Base Page
 class BasePage extends StatelessWidget {
+  ///
   const BasePage({super.key});
 
   @override

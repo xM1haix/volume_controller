@@ -3,6 +3,8 @@ import "dart:io";
 
 import "package:flutter/widgets.dart";
 
+///[Future] which returns void which handles the connection to
+///the Socket [client] it will debugPrint the IP and the PORT of the connection
 Future<void> handleConnection(Socket client) async {
   debugPrint(
     "Connection from ${client.remoteAddress.address}:${client.remotePort}",
@@ -10,9 +12,12 @@ Future<void> handleConnection(Socket client) async {
   await client.close();
   client.listen((x) {
     final r = json.decode(utf8.decode(x)) as Map<String, dynamic>;
+    debugPrint(r.toString());
   });
 }
 
+///[Future] which returns the voif and it checking
+///all the ports and IP for external connection
 Future<void> server() async {
   const port = 12345;
   final server = await ServerSocket.bind(InternetAddress.anyIPv4, port);

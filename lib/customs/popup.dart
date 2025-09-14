@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import "package:volume_controller/functions/nav.dart";
 
+///Reusable popup [Future] which returns [bool]
 Future<bool?> confirmPopUp({
   required BuildContext context,
   required String question,
@@ -16,6 +17,7 @@ Future<bool?> confirmPopUp({
       ],
     );
 
+///Reusable popup representing the [e] as error
 Future<void> errorPopup(BuildContext context, e) async {
   await popup(
     context: context,
@@ -25,6 +27,7 @@ Future<void> errorPopup(BuildContext context, e) async {
   );
 }
 
+///Reusable popup representing showing an info
 Future infoPopUp({
   required BuildContext context,
   required String title,
@@ -37,6 +40,7 @@ Future infoPopUp({
       actions: [("Ok!", null)],
     );
 
+///Loading popup
 void loading(BuildContext context) => popup(
       dismissible: false,
       context: context,
@@ -47,6 +51,8 @@ void loading(BuildContext context) => popup(
         child: Center(child: CircularProgressIndicator()),
       ),
     );
+
+///base [popup]
 Future<T?> popup<T>({
   required BuildContext context,
   required List<(String text, T value)> actions,
